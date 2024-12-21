@@ -1,0 +1,17 @@
+.yellow {
+  height: 300px;
+  width: 300px;
+  border: 50px solid yellow;
+}
+
+.green {
+  height: 200px;
+  width: 200px;
+  border: 50px solid green;
+}
+
+.red {
+  height: 100px;
+  width: 100px;
+  border: 50px solid red;
+}

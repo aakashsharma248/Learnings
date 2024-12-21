@@ -1,0 +1,132 @@
+// TODO: HTML5 IMPORTANT QUESTIONS
+
+1. What are semantic tags
+2. Difference between div and span tag
+3. Difference between Select and Option tags
+4. Difference between http and https
+
+// TODO: CSS IMPORTANT QUESTIONS
+
+1. Difference between inline and block elements
+2. Difference between visibility: hidden and display: none
+3. Difference between position relative and absolute 
+4. How to make a page responsive
+5. img tag is inline or block
+
+// TODO: JS IMPORTANT QUESTIONS
+
+1. Difference between let, var and const on the basis of scope and hoisting
+2. What is Hoisting in JS
+3. GEC and scoping
+4. Closures in js and it's application
+5. Difference between normal function and arrow function
+6. What is function expression
+7. What is deep copy and nested copy 
+8. What is object.seal and object.freeze does
+9. what are higher order function in js
+10. Practice questions on map, filter and reduce
+11. polyfills
+12. Basic logical programming questions based on array and string
+13. What is Event loop
+14. What are promises
+15. Functions which can we apply on promises
+16. Callbacks in js
+17. callback hell and how can we resolve it using promises
+18. inversion of control and how to resolve it using promises
+19. Async and await 
+20. Difference between async/await and promises
+21. Axios library 
+22. Memoization and Caching in js
+23. Call, apply and bind method in js
+24. Difference between Async and Defer in js while using external js
+25. Use of "This" keyword in multiple places
+26. What is Debouncing and throttling in js
+27. What is Event delegation in js
+28. What is Event propagation in js
+29. What is Currying in js
+30. What are prototype and prototypal inheritance in js
+31. Check type of every variable in js like function, object
+32. How does addition and subtraction works on string
+33. type checking in js using == and === 
+34. difference between primitive and non-primitive data types
+35. Which data type store by reference and which data type store by value
+36. Difference between Weakset and weakmap (optional)
+37. Difference between interface and type in ts 
+38. How to create generic function in ts
+39. Difference between unknown and any in ts
+40. Fragment in Graphql
+41. How do we handle timezone in js or may be using js
+42. Array Methods in js (slice, splice, unshift, shift)
+43. Difference between null and undefined 
+44. Difference between fetch and axios
+45. List out the features that ES6 provide us
+46. Spread, Rest and Destructuring in ES6
+47. Difference between function declaration and function expression and when to use which one
+48. Difference between setTimeout and setImmidiate
+49. If we pass time as 0 in setImmidiate then which function will be called first
+50. Can we pass negative value in setTimeout and how does it behave
+
+// TODO: REACT IMPORTANT QUESTIONS
+
+1. What is react.js and it's advantages and disadvantages
+2. Difference between react and angular.js
+3. Cons of React.js
+4. What is props drilling and how can we solve it
+5. Context API using useContext and it's implementation
+6. Redux and it's implementation
+7. Difference between Context API and Redux
+8. Can we use redux to create state within a component and is it better or not?
+9. Where should we make the api call while working with redux in action/reducer/store?
+10. Difference between functional and class based components
+11. How can we optimize the performance of react app 
+12. What is useMemo and it's implementation
+13. What is useCallback and it's implementation
+14. Difference between useMemo and useCallback 
+15. What is debouncing in react and how can we achieve it
+16. What is throttling in react and how can we achieve it
+17. What are lifecycle methods in react class based component
+18. Which hook plays role of lifecycle method in react functional based component
+19. What is a cleaner function in react useEffect 
+20. How does Authorization works in react
+21. Difference between CSR and SSR
+22. Difference between local store, session storage and cookies
+23. Authentication and Authorization using JWT and Sessions (sessionId)
+24. What is lazy loading and code splitting in react and how to implementation it.
+25. What are different types of ways to create state in react
+26. Difference between useState and useRef
+27. useReducer hook and it's uses (optional)
+28. how can we pass data from child to parent in react
+29. How to write test cases in react using jest
+30. What is react fibre
+31. What is reconciliation in react
+32. How does "remember me" functionality works on login page 
+33. What are synthetic events
+34. What is micro frontend
+35. Difference between package.json and package-lock.json
+36. How to pass data into siblings component    
+37. customHook in React, it's uses and implementation 
+38. What is Virtual Dom in react, how it's different from Real Dom
+39. Difference between Virtual Dom and Real Dom
+40. Diffing Algorithm
+41. Protected Route in React and how to manage it
+42. Dynamic Route in React
+43. React Router dom and it's implementation
+44. Shimmer Ui in react with implementation
+45. How to manage accessibility in react
+46. How can we convert the data from js object to json to pass it as a payload 
+47. How we store and get data from local storage 
+48. Difference between controlled and uncontrolled components
+
+
+
+// TODO: REACT-NATIVE IMPORTANT QUESTIONS
+
+1. What are bridges in react native
+2. Difference between FlatList and 
+3. Localization in react native
+4. How can we share IPA with developers in react native
+5. How can we pass data in moment to convert it into spanish
+6. what should be the content type if we upload image in react native
+7. what is Browser routing
+8. What is Sparse Array
+9. how to manage and work with Push Notification 

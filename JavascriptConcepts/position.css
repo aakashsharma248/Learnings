@@ -1,0 +1,29 @@
+.para{
+    background-color: red;
+}
+
+div {
+    position: relative;
+    background-color: beige;
+}
+
+ul {
+    position: fixed;
+    background-color: beige;
+}
+.css-li {
+    position: absolute;
+    background-color: purple;
+     /* left: 5px; */
+     top: 18px;
+}
+
+.js-li {
+    position: fixed;
+    background-color: chartreuse;
+    top: 10px;
+}
+
+.html-li {
+    position: sticky;
+}

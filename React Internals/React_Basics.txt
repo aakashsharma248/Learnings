@@ -1,0 +1,85 @@
+1. React is just a library not a framework.
+2. We can use react using the cdn link as well
+3. We can create a element in react using the React.createElement("h1",{name="h1Tag"},"this is a h1")
+4. React.createElement is a function which takes 3 arguments, first one is tag, next is attribute and the last is the content
+5. We can only pass one tag as the root and render it
+6. If there is a div tag which we passed as a root, and there is already some content inside that tag but the react.render(root) will 
+override it.
+7. If/Else/Switch statement are not allowed inside the JSX
+8. Flow how react render the elements on the UI: 
+   Component A -> Component Instance A1 -> React Element -> DOM Element (HTML) -> User Interface
+9. Phases of rerender:
+   Render Triggered -> Render Phase -> Commit Phase -> Browser Paint (DOM Updates)
+   a) Render Triggered: When state changes then the component render get triggered
+   b) Render Phase: In this phase the render get schedule, we also do batching for multiple state updates, it is asynchronous. it does
+      not produce any visual effect. Updating state are asynchronous because states are batched as we can rerender the component there
+      times if we have 3 setState in the same function, we will batch them and store it, and we will only update them when the js 
+      engine have some free time.
+   c) Commit Phase: It is synchronous, in this phase the changes get committed and updated the DOM.
+   d) DOM Updates: The changes are visible on the UI. 
+10. Render Phase or rendering is not updating the DOM or displaying elements on the UI.
+11. Situation when react trigger rerender:
+    a) Initial render
+    b) State is updated 
+12. Renders are not triggered immediately, but scheduled for when the JS engine has some free time. There is also batching of 
+    multiple setState calls in event handlers 
+13. Virtual Dom is also known as React Element Tree 
+14. Virtual DOM is just a vanilla JS object, having lesser number of keys in comparison of Real dom, that's why virtual DOM is 
+    cheap and fast
+15. Rendering a component will cause all of it's child components to be rerendered as well, no matter is props changes or not. because 
+    react doesn't know whether the children will be affected or not.So in safer side react rerender all of it's child components.
+16. Real DOM, Fibre Tree, both are some. 
+17. React compares virtual dom with real dom which is known as reconciliation where the real dom(fibre dom) is known as reconciler.
+18. Fibre tree get's created on the initial render and didn't recreated again and again, it just got updated on each rerender. 
+    where as the virtual dom get's recreated again and again.
+19. Rendering process can be split into chunks,tasks,can be prioritized and work can be paused, reused or thrown away. where the long
+    renders won't block the JS engine. Work can be done asynchronously.
+20. Committing phase is synchronous, DOM is updated is one go, it can't be interrupted. This is necessary so that the DOM never shows
+    partial results, ensuring a consistent UI.    
+21. How DIFFING works: 
+    - Diffing uses 2 fundamental assumptions:
+     1. Two elements with different types produce different trees
+     2. Elements with a stable key prop stay the same across renders  
+
+ 22. There are some scenarios which we need to understand above points.
+    a) Same Position but Different Elements -> React assumes entire sub-tree is no longer valid, old components are destroyed and 
+       removed from the DOM
+    b) Same Position AND SAME ELEMENT -> Element will be kept including state, usually face this on screen having multiple tab
+    c) Same element AND Different position -> React assumes entire sub-tree is no longer valid, old components are destroyed and 
+       removed from the DOM
+  23. Key attribute in List: 
+    a) If we don't have a key attribute in a list and we added one more element in the start of the list then there is a condition
+      of same element but different position so react will destroy them and recreated them in the DOM.
+    b) But using the key attribute in the list item when we a new item in the list and added a new key for it without modifying the
+       remaining then react will use the previous DOM tree and just updated with by adding one more element in the DOM.
+  24. There are two types of logic in react components
+    a) Render logic: The logic which we write inside the return condition
+    b) Event Handler Function: The logic which we write to make the logic and to handle the events 
+
+   25. SideEffects - Interaction with the outside world is known as side effects or dependency or modifying of any data outside the 
+       functional scope.
+       -> SideEffects are not bad, a program can only be useful if it has Interaction with the outside world like fetching data from api
+   26. Pure Function - A function that has no side effects, if we pass the same value then we will get the same result.
+   27. How Event Handler works behind the scene:- There is a concept of event propagation and event delegation in js which happens in 
+       react as well, so whenever we get the event object it actually refers to the DOCUMENT first then body then main parent then
+       it's child then it's child and then to the element for which we added the handlerFunction after it event bubbling happens and 
+       we can listen to that event when needed.
+       - React register all the event handlers on the root DOM container.
+    28. Synthetic Event:- Pointer Events, Mouse Events, Keyboard Events are all Synthetic events, they are basically the normal object
+        but has some special function as property like stopPropagation() and preventDefault()   
+    29. PERFORMANCE OPTIMIZATION TOOLS: We can optimize the performance by three ways 
+        a) Prevent Wasted Renders - Achieved using memo, useMemo, useCallback, passing element as children
+        b) Improve APP Speed/ Responsiveness - useMemo, useCallback, useTransition
+        c) Reduce bundle size - Code splitting and lazy loading, using 3rd party packages.
+    30. Scenarios of rerender: 
+        a) State changes
+        b) Context changes
+        c) Parent re-render
+     31. We can prevent some wasted rerender using some memoization technique, wasted renders are those who doesn't provide any DOM 
+         changes.
+     32. We have 3 ways to memoize in react, all have different use cases:
+        a) memo - Memoize the Component itself
+        b) useMemo - Memoize objects using useMemo
+        c) useCallback - Memoize function using useCallback.
+     33.              
+

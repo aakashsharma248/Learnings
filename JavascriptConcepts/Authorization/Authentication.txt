@@ -1,0 +1,96 @@
+Authorization and Authentication can be done using two ways:
+1. Statefull Authorization (Using Session)
+2. Stateless Authorization (Using JWT)
+
+--> Statefull Authorization can be done using "Session"
+
+--> Stateless Authorization can be done using "JWT"
+
+
+                    ** Statefull Authorization/Authentication (Using Session) **
+
+In this the client sends the username and password to the server, and the server sends the details
+to the DB and based on that the server created the sessionId and sent back to the client using cookies.
+
+Now with each request, the client/browser sends the sessionId using cookie and based on that the
+server verifies that the sessionId is valid or not and provide Authorization.
+
+--> In this, we used to store data on the server.
+--> Sessions are usually configured with an expiry time (e.g., 30 minutes).
+    Once expired, the user will need to log in again.
+
+** Application of StateFull Authorization/Authentication **
+
+1. Used in bank server as the session is only valid for limited time like 10-15 mins
+2. As we have unique SessionId for each session so we can remove the sessionId as required.
+
+
+                     ** Stateless Authorization/Authentication (Using JWT) **
+
+In this the client sends the username and password to the server, and based on that the server 
+created the JWT token and sent back to the client using cookies.
+
+--> A JWT consist of refresh token which is a separate token issued alongside the access token.
+
+Now with each request, the client/browser sends the JWT token using "cookie" or in "Authorization
+headers" and based on that the server verifies that the user is valid or not and provide 
+Authorization accordingly.
+
+--> JWT token consist of 3 parts basically.
+  1. (Header) First part contains the algo and type of token. ex - {"alg": "HS256", "typ": "JWT"}
+  2. (Payload) Second part contains the information about the user like {"sub":1234567890, "name": "aakash}
+  3. (Signature) Third part verify that the token has not been modified
+
+--> JWT is stateless, meaning the server does not need to store user sessions in memory or in a 
+    database. The token itself contains all necessary information about the user.
+
+--> Since no session is stored on the server, scaling the application is easier. 
+    Any server can validate the token without having to share session data.   
+
+--> Always use short-lived JWTs and renew them periodically (with refresh tokens if necessary).
+
+--> Since JWTs are often short-lived, you can implement a refresh token mechanism to issue new JWTs without 
+    requiring the user to log in again.
+
+--> In this, we don't used to store data on the server.
+--> JWT are usually configured with an expiry time (e.g., 30 minutes).
+    Once expired, the user will need to log in again.
+
+--> Since JWTs are often short-lived, you can implement a refresh token mechanism to issue new JWTs without 
+    requiring the user to log in again.
+
+                               ** JWT Refresh Token **
+
+
+--> Refresh Token long-lived and stored securely on the client-side.
+--> It provides a way to obtain new access tokens without requiring re-authentication.
+
+Refresh Token Flow
+
+Client Sends Refresh Token:
+
+The client sends the refresh token to the server in a secure manner (e.g., using HTTPS).
+Server Validates Refresh Token:
+
+The server verifies the validity and integrity of the refresh token.
+It checks if the token has expired or been revoked.
+Server Generates New Access Token:
+
+If the refresh token is valid, the server generates a new access token.
+The new access token is typically issued with a shorter expiration time than the refresh token.
+Server Returns New Access Token:
+
+The server returns the new access token to the client.
+Client Uses New Access Token:
+
+The client stores the new access token and uses it for subsequent requests.
+
+When to Send the Refresh Token:
+
+Initial Authentication: When the user first authenticates, the server typically issues both an access token and a 
+refresh token. The refresh token is then stored securely on the client-side.
+Access Token Expiration: When the access token expires, the client can send the refresh token to the server to
+obtain a new access token.
+We can store the refresh token in the client-side generally in local storage and cookies
+
+

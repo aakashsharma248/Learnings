@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.mainContainer {
+  background-color: black;
+  /* height: 100vh; */
+}
+
+.formLabel {
+  margin: 0.5px;
+  color: white;
+}
+
+.container, .displayData, .tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex-direction: column;
+  gap: 32px;
+  height: 100vh;
+}
+
+.containerElement {
+  position: relative;
+}
+
+.listItem {
+  padding: 10px;
+  min-width: 30vw;
+  box-sizing: content-box;
+}
+
+#button {
+  background-color: beige;
+}
+
+.displayData {
+  flex-direction: column;
+}
+
+.concernHeading {
+  color: white;
+  margin-top: 18vh;
+}
+
+.dataHeader {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  color: white;
+}
+
+.rowElement {
+  flex-basis: 25%;
+  text-align: center;
+  color: white;
+}
+
+.tooltip {
+  height: 4.5vh;
+  min-width: 32vw;
+  text-align: center;
+  border-radius: 6px;
+  background-color: greenyellow;
+}
+
+.displayError {
+  position: absolute;
+  color: red;
+  bottom: -2.2vh;
+}

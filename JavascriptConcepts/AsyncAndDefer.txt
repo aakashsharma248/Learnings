@@ -1,0 +1,44 @@
+// async: Scripts load in parallel and execute as soon as they are ready (non-blocking), but without guaranteed execution order.
+// defer: Scripts load in parallel, but they execute only after the HTML parsing is complete and in the order they are defined.
+
+// 1. The Default Behavior Without async or defer
+
+//  <script src="script.js"></script> 
+
+//  The browser stops parsing the HTML when it encounters the <script> tag.
+//  It downloads and executes the script immediately before continuing to parse the rest of the HTML.
+//  This is blocking, meaning it prevents the rest of the page from loading until the script is done.
+
+// 2. async Attribute
+
+{/* <script src="script.js" async></script> */}
+
+// The script file is downloaded asynchronously (in parallel) while the HTML is being parsed.
+// Once the script is downloaded, it is executed immediately (before the HTML parsing completes).
+// Execution is not ordered: if multiple async scripts are used, they will run as soon as they finish downloading, 
+// which may cause issues if one script relies on another.
+
+// When to Use async
+// Use async for scripts that are independent of other scripts or DOM content, such as analytics, tracking scripts, or third-party services.
+// Good for scripts that don’t rely on other scripts or DOM elements being fully loaded.
+
+// 3. defer Attribute
+
+{/* <script src="script.js" defer></script> */}
+
+// The script file is also downloaded asynchronously while the HTML is being parsed.
+// However, the script is executed after the HTML parsing is fully complete (i.e., after the DOM is fully constructed).
+// Execution order is preserved: if multiple defer scripts are included, they will execute in the 
+// order they appear in the document.
+
+
+// When to Use defer:
+// Use defer for scripts that rely on the DOM being fully parsed before they execute, such as 
+// scripts that manipulate DOM elements or rely on other scripts.
+// Ideal for most scripts that affect the page content, such as those controlling interactivity or 
+// loading content dynamically.
+
+
+// Summary
+// async: Scripts load in parallel and execute as soon as they are ready (non-blocking), but without guaranteed execution order.
+// defer: Scripts load in parallel, but they execute only after the HTML parsing is complete and in the order they are defined.

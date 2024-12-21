@@ -1,0 +1,45 @@
+CSR - Client Side Rendering
+SSR - Server Side Rendering
+ 
+                             ** Client Side Rendering **
+ In CSR, the rendering of the page happens in the browser. The server sends a minimal HTML skeleton
+ to the client, and JavaScript (often through libraries like React or Vue) takes over to render
+ the page dynamically.
+
+
+Cons for CSR:
+--> Client side rendering is not good for SEO
+
+--> Rendering Time: The initial loading can be slower because the browser has to download 
+JavaScript files and run them before displaying the content.
+
+Pros of CSR:
+
+--> Rich User Interaction: Once the page is loaded, interactions (like clicking buttons, 
+form submissions) are fast because most logic is handled on the client side.
+
+--> Lower server load: Server just serves the files, and the client does most of the work.
+
+
+
+         
+                                 ** Server Side Rendering **
+
+--> In SSR, the content of the web page is rendered on the server before being sent to the client.
+ When a user makes a request, the server generates the HTML page with all the content and sends it
+  back to the client for display.                                 
+
+Pros of SSR:
+--> Faster initial load: The user receives fully rendered content right away.
+
+--> Better SEO: Search engines can crawl the HTML pages more easily.
+
+--> Performance: Can be optimized for faster time-to-first-byte (TTFB), especially useful in high-latency scenarios.
+
+Cons of SSR:
+
+--> Server load: Each request requires server processing to render the HTML, which can increase server costs.
+
+--> Page transitions: Full-page reloads are more common, making transitions feel slower compared to CSR.
+
+--> More complexity: Managing user interactions can be more complex since logic needs to be handled on both server and client.

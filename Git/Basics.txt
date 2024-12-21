@@ -1,0 +1,94 @@
+1. Command to see all the log messages in one line with commit id
+git log --oneline
+
+2. Command to see all the commit history in one line with the graph
+ git log --oneline --all --graph
+
+3. Command to show the origin and check it
+git remote show origin
+
+4. Command to add the origin
+git remote add origin [URL]
+
+5. We can reset the commit locally using 3 ways:
+  a) Soft 
+  b) Hard
+  c) mixed
+
+  a) Using soft we will reset the commit, it is used in Git to move the HEAD pointer to the specified 
+     commit while keeping the changes from the commits after it staged in the index (staging area)
+      git reset --soft [commit id]
+ 
+  b) The git reset --hard [commit id] command is used to reset the HEAD pointer to a specific commit and
+     discard all changes in the working directory and the staging area.
+      git reset --hard [commit id]
+
+  c) The git reset [commit id] command is used to move the HEAD pointer to a specific commit. 
+     Unlike --soft or --hard, using git reset [commit id] without any options defaults to --mixed. 
+     This means it resets the HEAD and staging area to the specified commit but leaves the working 
+     directory unchanged.
+     git reset [commit id]
+
+ 6. git reflog is a Git command that records every change made to the HEAD reference in your repository.
+    Use Case:
+    Recover Lost Commits: If a commit is accidentally deleted or reset, git reflog allows you to locate the commit hash and restore it.
+    Track History: View all recent movements of HEAD, including branch switches and resets. 
+    git reflog
+
+ 7.  git checkout head~4  --> Move the 4 commit back starting first commit as 0 index, we don't need
+     commitId on this
+     git reset --hard head~1 --> Move head to the one commit before
+
+ 8. If we have pushed the changes on the remote repo means on github then we should not reset the commit 
+    we should always revert it using the revert Command
+    git revert [commitId]
+
+ 9. git revert --no-commit head~3 --> Reverted the last 3 commit 
+
+ 10. To abort the revert commit, we can use the 
+     git revert --abort
+
+ 11. To revert the merge command we can use the 
+     git merge --abort 
+
+  12. If we need to checkout to another branch without commiting the changes we can stash them using stash
+      git stash -m "stash messgae"
+
+  13. git stash list -- to see the list of the stashed changes
+
+  14. git stash apply 1 -- to apply the changes stashed at 1st index
+
+  15. git stash drop 1 -- to remove stashed changes at index 1 
+
+  16. git stash clear -- to clear all the stash stored
+
+  17. Suppose we have made multiple commits on a brach but we want to move specific commits to remote repo 
+      the we can use the cherry-pick command to move only the selected commits      
+      git cherry-pick [commit ID]
+
+  18. .gitignore is a file extension, whatever we define under it will not get pushed on remote repo
+       usually we keep our .env and node_modules under this, if we have already pushed some files and later
+       on we added them into the .gitignore then first we need to clear the cache then it will work 
+       otherwise it will keep a track of it using the cache stored in the same.
+
+  19. git remove -v --> command to see the origin
+
+  20. git remote add base --> to add a origin 
+
+  21. fetch is basically used to fetch the changes in the local but after it we need to merge the changes
+      well to keep our local updated as remote, so we need two commands here 
+      git fetch 
+      git merge 
+
+  22. pull works same as fetch and merge together in a single command 
+      git pull 
+
+------------------------------Additional tips for the Open Source-----------------------------------------
+
+  23. if we want to do the open source development and we want to contribute to some repo by resolving some
+      open bugs raised under the Issues section, then we should fork it first by forking it will create a 
+      local repo in our personal github profile by some other name as well then we can clone it and made 
+      some changes there, if we raise a PR there and merge it then the PR will get raised in the main 
+      open source repo as well. Thanks!
+
+
