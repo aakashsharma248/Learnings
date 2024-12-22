@@ -81,5 +81,32 @@ override it.
         a) memo - Memoize the Component itself
         b) useMemo - Memoize objects using useMemo
         c) useCallback - Memoize function using useCallback.
-     33. Added a new line             
+         34. We can track all these rerender using the Profiler tab of the chrome developer tool.
+     33. In react, everything is recreated on every rerender including the objects and functions.
+     34. If objects or functions passed as a props then the child component will always see then as new props 
+     35. If props are not same during rerender then the memo function will not work, we need to memoize the object and function in order
+         to avoid the rerender.
+     36. useMemo and useCallback have a dependency array so whenever any dependency changes then the value will be recreated.
+     37. If we are using a pure component in which there are no props then we can wrap the whole component in the memo function to 
+         memoize the while component also we can use it in case of primitive data type, but in case we are passing object as a props 
+         then at that scenario in parent component the object recreated again on rerender and acquire different space in memory so 
+         the child component will again get rerender even wrapping child in memo as well, so to resolve it we should memoize the object
+         using the useMemo hook so that the object will not be created again and child will not get rerender. 
+         And to handle the last scenario, if we are passing the function as the props to the child component then at that scenario as 
+         well the function will get created again and child will rerender so to resolve that we should wrap the whole function in the 
+         useCallback hook.
+         Apart from it we can also use these hooks to memoize the expensive calculations as well within the same component.
+     38. BUNDLE AND CODE SPLITTING: 
+         a) Bundle: Javascript file containing the whole application code,downloading the code will load the entire app at once, turning 
+          it into the single page application.
+         b) Bundle Size: Amount of Javascript, which the user needs to download to run the application, one of the most important thing
+            to optimize the app
+         c) Code splitting: Splitting budle into multiple parts that can be downloaded over time. this is also known as lazy loading.
+     39.  We should also optimize the context if there are multiple consumers.
+     40. UseEffect dependency array rules:
+         a) Every state variable, prop and context value used inside the effect must be included in the dependency array.
+     41. We should use ReactQuery to fetch data from the API instead of fetching it in useEffect with empty dependency array in big 
+         application.    
+
+
 
