@@ -81,5 +81,5 @@ override it.
         a) memo - Memoize the Component itself
         b) useMemo - Memoize objects using useMemo
         c) useCallback - Memoize function using useCallback.
-     33.              
+     33. Added a new line             
 
